@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.10.4 on darwin)" generated="20220610 19:52:02.263" rpa="false" schemaversion="3">
+<suite id="s1" name="TestForeApplication" source="/Users/andikaprananto/Documents/ProjAutomation/ALAMI-TestEngineer/SuiteTest/TestForeApplication.robot">
+<test id="s1-t1" name="TC001 Open application and allow permission apps" line="18">
+<kw name="Setup and open dialer Android App" library="OpenMobileSetUp">
+<kw name="Open Application" library="AppiumLibrary">
+<var>${androiddriver}</var>
+<arg>${Appium_server}</arg>
+<arg>platformName=android</arg>
+<arg>platformVersion=${platfrom}</arg>
+<arg>deviceName=${Device_name}</arg>
+<arg>automationName=${automationName}</arg>
+<arg>appPackage=${appPackage}</arg>
+<arg>newCommandTimeout=3000</arg>
+<arg>appActivity=${appActivity}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220610 19:52:11.240" level="INFO">${androiddriver} = 1</msg>
+<status status="PASS" starttime="20220610 19:52:02.475" endtime="20220610 19:52:11.240"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:02.475" endtime="20220610 19:52:11.240"/>
+</kw>
+<kw name="Swipe Left to Right SplashScreen" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${slider_path}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:11.241" endtime="20220610 19:52:12.607"/>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${slider_path}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:12.671" level="INFO">Element 'id=walkthrough_slider' size: {'height': 123, 'width': 954} </msg>
+<msg timestamp="20220610 19:52:12.671" level="INFO">${element_size} = {'height': 123, 'width': 954}</msg>
+<status status="PASS" starttime="20220610 19:52:12.608" endtime="20220610 19:52:12.672"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${slider_path}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:12.737" level="INFO">Element 'id=walkthrough_slider' location: {'x': 63, 'y': 1587} </msg>
+<msg timestamp="20220610 19:52:12.737" level="INFO">${element_location} = {'x': 63, 'y': 1587}</msg>
+<status status="PASS" starttime="20220610 19:52:12.672" endtime="20220610 19:52:12.737"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:12.740" level="INFO">${start_x} = 158.4</msg>
+<status status="PASS" starttime="20220610 19:52:12.737" endtime="20220610 19:52:12.740"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:12.742" level="INFO">${start_y} = 1599.3</msg>
+<status status="PASS" starttime="20220610 19:52:12.740" endtime="20220610 19:52:12.742"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:12.743" level="INFO">${end_x} = 1017</msg>
+<status status="PASS" starttime="20220610 19:52:12.742" endtime="20220610 19:52:12.743"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.1)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:12.744" level="INFO">${end_y} = 1599.3</msg>
+<status status="PASS" starttime="20220610 19:52:12.744" endtime="20220610 19:52:12.744"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:12.745" endtime="20220610 19:52:13.804"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:14.807" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:13.804" endtime="20220610 19:52:14.807"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${btn_close}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:14.810" level="INFO">Clicking element 'id=wlk_close_button'.</msg>
+<status status="PASS" starttime="20220610 19:52:14.807" endtime="20220610 19:52:14.960"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${btn_close2}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:14.962" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20220610 19:52:14.960" endtime="20220610 19:52:15.719"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${btn_next}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:15.727" level="INFO">Clicking element 'id=button_text_button'.</msg>
+<status status="PASS" starttime="20220610 19:52:15.720" endtime="20220610 19:52:16.657"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:11.241" endtime="20220610 19:52:16.657"/>
+</kw>
+<kw name="Allow Pemission Location" library="CommonKey">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>com.android.permissioncontroller:id/permission_allow_one_time_button</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:16.658" endtime="20220610 19:52:17.474"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>com.android.permissioncontroller:id/permission_allow_one_time_button</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:17.480" level="INFO">Clicking element 'com.android.permissioncontroller:id/permission_allow_one_time_button'.</msg>
+<status status="PASS" starttime="20220610 19:52:17.474" endtime="20220610 19:52:17.600"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:16.658" endtime="20220610 19:52:17.600"/>
+</kw>
+<doc>Open application and allow permission apps</doc>
+<tag>ALAMI Technical Test</tag>
+<status status="PASS" starttime="20220610 19:52:02.475" endtime="20220610 19:52:17.600"/>
+</test>
+<test id="s1-t2" name="TC002 After Open App &amp; Allow Pemission, Click Order Now" line="25">
+<kw name="Order Now Coffe" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/button_text_button</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:17.602" endtime="20220610 19:52:18.903"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/button_text_button</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:18.908" level="INFO">Clicking element 'coffee.fore2.fore:id/button_text_button'.</msg>
+<status status="PASS" starttime="20220610 19:52:18.904" endtime="20220610 19:52:19.053"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:17.602" endtime="20220610 19:52:19.053"/>
+</kw>
+<kw name="Choose one menu &amp; product Coffe" library="ClassApplicationFore">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:21.058" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220610 19:52:19.055" endtime="20220610 19:52:21.058"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.FrameLayout/android.widget.ImageView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:21.059" endtime="20220610 19:52:21.559"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.FrameLayout/android.widget.ImageView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:21.563" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.FrameLayout/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20220610 19:52:21.559" endtime="20220610 19:52:22.396"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.FrameLayout/android.widget.ImageView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:22.397" endtime="20220610 19:52:22.615"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.FrameLayout/android.widget.ImageView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:22.619" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.FrameLayout/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20220610 19:52:22.615" endtime="20220610 19:52:22.845"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:19.054" endtime="20220610 19:52:22.845"/>
+</kw>
+<kw name="Scroll Element Optional Topping" library="ClassApplicationFore">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:23.598" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' size: {'height': 844, 'width': 1080} </msg>
+<msg timestamp="20220610 19:52:23.598" level="INFO">${element_size} = {'height': 844, 'width': 1080}</msg>
+<status status="PASS" starttime="20220610 19:52:22.846" endtime="20220610 19:52:23.598"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:23.725" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' location: {'x': 0, 'y': 950} </msg>
+<msg timestamp="20220610 19:52:23.726" level="INFO">${element_location} = {'x': 0, 'y': 950}</msg>
+<status status="PASS" starttime="20220610 19:52:23.599" endtime="20220610 19:52:23.726"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:23.728" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:23.726" endtime="20220610 19:52:23.728"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:23.731" level="INFO">${start_y} = 1540.8</msg>
+<status status="PASS" starttime="20220610 19:52:23.728" endtime="20220610 19:52:23.731"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:23.732" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:23.731" endtime="20220610 19:52:23.732"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:23.733" level="INFO">${end_y} = 1203.2</msg>
+<status status="PASS" starttime="20220610 19:52:23.732" endtime="20220610 19:52:23.733"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>550</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:23.733" endtime="20220610 19:52:24.780"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:25.781" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:24.780" endtime="20220610 19:52:25.782"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:22.845" endtime="20220610 19:52:25.783"/>
+</kw>
+<kw name="Scroll Element Optional Topping" library="ClassApplicationFore">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:25.990" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' size: {'height': 1292, 'width': 1080} </msg>
+<msg timestamp="20220610 19:52:25.990" level="INFO">${element_size} = {'height': 1292, 'width': 1080}</msg>
+<status status="PASS" starttime="20220610 19:52:25.785" endtime="20220610 19:52:25.990"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:26.129" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' location: {'x': 0, 'y': 502} </msg>
+<msg timestamp="20220610 19:52:26.130" level="INFO">${element_location} = {'x': 0, 'y': 502}</msg>
+<status status="PASS" starttime="20220610 19:52:25.991" endtime="20220610 19:52:26.130"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:26.132" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:26.130" endtime="20220610 19:52:26.132"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:26.135" level="INFO">${start_y} = 1406.4</msg>
+<status status="PASS" starttime="20220610 19:52:26.133" endtime="20220610 19:52:26.135"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:26.136" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:26.135" endtime="20220610 19:52:26.136"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:26.137" level="INFO">${end_y} = 889.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:26.136" endtime="20220610 19:52:26.137"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>550</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:26.137" endtime="20220610 19:52:27.179"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:28.183" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:27.180" endtime="20220610 19:52:28.183"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:25.784" endtime="20220610 19:52:28.184"/>
+</kw>
+<kw name="Choose Ice Cube Normal to Less Ice" library="ClassApplicationFore">
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:30.187" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220610 19:52:28.186" endtime="20220610 19:52:30.187"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.view.ViewGroup/android.view.View</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:30.188" endtime="20220610 19:52:31.447"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.view.ViewGroup/android.view.View</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:31.452" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[2]/android.view.ViewGroup/android.view.View'.</msg>
+<status status="PASS" starttime="20220610 19:52:31.447" endtime="20220610 19:52:31.672"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.RadioButton</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:31.672" endtime="20220610 19:52:32.370"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.RadioButton</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:32.374" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.LinearLayout/android.widget.RadioButton'.</msg>
+<status status="PASS" starttime="20220610 19:52:32.371" endtime="20220610 19:52:32.534"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:28.185" endtime="20220610 19:52:32.535"/>
+</kw>
+<kw name="Choose Syrup 'Aren'" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]/android.view.ViewGroup/android.widget.ImageView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:32.535" endtime="20220610 19:52:33.219"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]/android.view.ViewGroup/android.widget.ImageView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:33.223" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.widget.LinearLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout[5]/android.view.ViewGroup/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20220610 19:52:33.219" endtime="20220610 19:52:33.401"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[1]</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:33.401" endtime="20220610 19:52:34.179"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[1]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:34.184" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView[1]'.</msg>
+<status status="PASS" starttime="20220610 19:52:34.180" endtime="20220610 19:52:34.373"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:32.535" endtime="20220610 19:52:34.373"/>
+</kw>
+<kw name="Scroll Element Add To Cart" library="ClassApplicationFore">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:35.072" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' size: {'height': 1542, 'width': 1080} </msg>
+<msg timestamp="20220610 19:52:35.072" level="INFO">${element_size} = {'height': 1542, 'width': 1080}</msg>
+<status status="PASS" starttime="20220610 19:52:34.374" endtime="20220610 19:52:35.072"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:35.207" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' location: {'x': 0, 'y': 252} </msg>
+<msg timestamp="20220610 19:52:35.207" level="INFO">${element_location} = {'x': 0, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:52:35.073" endtime="20220610 19:52:35.207"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:35.210" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:35.207" endtime="20220610 19:52:35.210"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:35.212" level="INFO">${start_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:35.210" endtime="20220610 19:52:35.212"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:35.213" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:35.212" endtime="20220610 19:52:35.213"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:35.214" level="INFO">${end_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:35.213" endtime="20220610 19:52:35.214"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>500</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:35.214" endtime="20220610 19:52:36.263"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:37.266" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:36.263" endtime="20220610 19:52:37.266"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:34.374" endtime="20220610 19:52:37.267"/>
+</kw>
+<kw name="Click Add To Cart" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_add_to_cart</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:37.270" endtime="20220610 19:52:37.358"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_add_to_cart</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:37.362" level="INFO">Clicking element 'coffee.fore2.fore:id/product_add_to_cart'.</msg>
+<status status="PASS" starttime="20220610 19:52:37.358" endtime="20220610 19:52:37.477"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:40.479" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220610 19:52:37.477" endtime="20220610 19:52:40.479"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:37.268" endtime="20220610 19:52:40.480"/>
+</kw>
+<doc>Open application and allow permission apps</doc>
+<tag>ALAMI Technical Test</tag>
+<status status="PASS" starttime="20220610 19:52:17.601" endtime="20220610 19:52:40.481"/>
+</test>
+<test id="s1-t3" name="TC003 Order Coffe Espresso in Indonesia Flavor" line="37">
+<kw name="Order Coffe Espresso in Indonesia Flavor" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:40.487" endtime="20220610 19:52:40.814"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:40.815" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[3]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220610 19:52:40.814" endtime="20220610 19:52:42.518"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:40.485" endtime="20220610 19:52:42.519"/>
+</kw>
+<kw name="Scroll Element to Espresso Coffe" library="ClassApplicationFore">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>coffee.fore2.fore:id/catalog_scroll_view</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:42.715" level="INFO">Element 'coffee.fore2.fore:id/catalog_scroll_view' size: {'height': 1542, 'width': 891} </msg>
+<msg timestamp="20220610 19:52:42.715" level="INFO">${element_size} = {'height': 1542, 'width': 891}</msg>
+<status status="PASS" starttime="20220610 19:52:42.519" endtime="20220610 19:52:42.715"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>coffee.fore2.fore:id/catalog_scroll_view</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:42.888" level="INFO">Element 'coffee.fore2.fore:id/catalog_scroll_view' location: {'x': 189, 'y': 252} </msg>
+<msg timestamp="20220610 19:52:42.888" level="INFO">${element_location} = {'x': 189, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:52:42.715" endtime="20220610 19:52:42.888"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:42.891" level="INFO">${start_x} = 634.5</msg>
+<status status="PASS" starttime="20220610 19:52:42.889" endtime="20220610 19:52:42.891"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:42.893" level="INFO">${start_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:42.891" endtime="20220610 19:52:42.894"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:42.895" level="INFO">${end_x} = 634.5</msg>
+<status status="PASS" starttime="20220610 19:52:42.894" endtime="20220610 19:52:42.895"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:42.895" level="INFO">${end_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:42.895" endtime="20220610 19:52:42.895"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:42.895" endtime="20220610 19:52:43.825"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:44.826" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:43.826" endtime="20220610 19:52:44.827"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:42.519" endtime="20220610 19:52:44.828"/>
+</kw>
+<kw name="Scroll Two Element to Espresso Coffe" library="ClassApplicationFore">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>coffee.fore2.fore:id/catalog_scroll_view</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:45.047" level="INFO">Element 'coffee.fore2.fore:id/catalog_scroll_view' size: {'height': 1542, 'width': 891} </msg>
+<msg timestamp="20220610 19:52:45.047" level="INFO">${element_size} = {'height': 1542, 'width': 891}</msg>
+<status status="PASS" starttime="20220610 19:52:44.831" endtime="20220610 19:52:45.047"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>coffee.fore2.fore:id/catalog_scroll_view</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:45.497" level="INFO">Element 'coffee.fore2.fore:id/catalog_scroll_view' location: {'x': 189, 'y': 252} </msg>
+<msg timestamp="20220610 19:52:45.498" level="INFO">${element_location} = {'x': 189, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:52:45.048" endtime="20220610 19:52:45.498"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:45.501" level="INFO">${start_x} = 634.5</msg>
+<status status="PASS" starttime="20220610 19:52:45.498" endtime="20220610 19:52:45.501"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:45.503" level="INFO">${start_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:45.501" endtime="20220610 19:52:45.503"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:45.505" level="INFO">${end_x} = 634.5</msg>
+<status status="PASS" starttime="20220610 19:52:45.503" endtime="20220610 19:52:45.505"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:45.506" level="INFO">${end_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:45.505" endtime="20220610 19:52:45.506"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>600</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:45.506" endtime="20220610 19:52:46.637"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:47.641" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:46.637" endtime="20220610 19:52:47.641"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:44.829" endtime="20220610 19:52:47.642"/>
+</kw>
+<kw name="Choose Coffe Espresso &amp; Verify Price 17.000" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:47.645" endtime="20220610 19:52:47.793"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:47.796" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220610 19:52:47.794" endtime="20220610 19:52:48.024"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_detail_product_price</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:48.024" endtime="20220610 19:52:48.708"/>
+</kw>
+<kw name="Page Should Contain Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_detail_product_price</arg>
+<arg>17.000</arg>
+<doc>Verifies that current page contains `locator` element.</doc>
+<msg timestamp="20220610 19:52:48.752" level="INFO">Current page contains element 'coffee.fore2.fore:id/product_detail_product_price'.</msg>
+<status status="PASS" starttime="20220610 19:52:48.709" endtime="20220610 19:52:48.752"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:47.643" endtime="20220610 19:52:48.752"/>
+</kw>
+<kw name="Scroll Element Add To Cart Espresso" library="ClassApplicationFore">
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:48.815" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' size: {'height': 844, 'width': 1080} </msg>
+<msg timestamp="20220610 19:52:48.815" level="INFO">${element_size} = {'height': 844, 'width': 1080}</msg>
+<status status="PASS" starttime="20220610 19:52:48.753" endtime="20220610 19:52:48.815"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:48.872" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' location: {'x': 0, 'y': 950} </msg>
+<msg timestamp="20220610 19:52:48.873" level="INFO">${element_location} = {'x': 0, 'y': 950}</msg>
+<status status="PASS" starttime="20220610 19:52:48.815" endtime="20220610 19:52:48.873"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:48.874" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:48.873" endtime="20220610 19:52:48.874"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:48.875" level="INFO">${start_y} = 1540.8</msg>
+<status status="PASS" starttime="20220610 19:52:48.874" endtime="20220610 19:52:48.875"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:48.876" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:48.876" endtime="20220610 19:52:48.877"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:48.877" level="INFO">${end_y} = 1203.2</msg>
+<status status="PASS" starttime="20220610 19:52:48.877" endtime="20220610 19:52:48.877"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:48.878" endtime="20220610 19:52:49.804"/>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:52:50.294" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' size: {'height': 1542, 'width': 1080} </msg>
+<msg timestamp="20220610 19:52:50.295" level="INFO">${element_size} = {'height': 1542, 'width': 1080}</msg>
+<status status="PASS" starttime="20220610 19:52:49.805" endtime="20220610 19:52:50.295"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:52:50.388" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' location: {'x': 0, 'y': 252} </msg>
+<msg timestamp="20220610 19:52:50.388" level="INFO">${element_location} = {'x': 0, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:52:50.295" endtime="20220610 19:52:50.388"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:50.391" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:50.389" endtime="20220610 19:52:50.391"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:50.393" level="INFO">${start_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:50.392" endtime="20220610 19:52:50.393"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:50.393" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:52:50.393" endtime="20220610 19:52:50.393"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:52:50.394" level="INFO">${end_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:52:50.394" endtime="20220610 19:52:50.394"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:52:50.394" endtime="20220610 19:52:51.325"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:52.328" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220610 19:52:51.326" endtime="20220610 19:52:52.328"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:48.753" endtime="20220610 19:52:52.329"/>
+</kw>
+<kw name="Click Add To Cart" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_add_to_cart</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:52.331" endtime="20220610 19:52:52.489"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_add_to_cart</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:52.494" level="INFO">Clicking element 'coffee.fore2.fore:id/product_add_to_cart'.</msg>
+<status status="PASS" starttime="20220610 19:52:52.489" endtime="20220610 19:52:52.608"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:52:55.610" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220610 19:52:52.609" endtime="20220610 19:52:55.610"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:52.330" endtime="20220610 19:52:55.611"/>
+</kw>
+<kw name="Validasi item in Cart" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/catalog_header_cart_icon</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:55.614" endtime="20220610 19:52:56.662"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/catalog_header_cart_icon</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:56.666" level="INFO">Clicking element 'coffee.fore2.fore:id/catalog_header_cart_icon'.</msg>
+<status status="PASS" starttime="20220610 19:52:56.662" endtime="20220610 19:52:57.987"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:57.988" endtime="20220610 19:52:58.769"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<arg>Hot Espresso</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220610 19:52:58.774" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView' contains text 'Hot Espresso'.</msg>
+<status status="PASS" starttime="20220610 19:52:58.770" endtime="20220610 19:52:58.891"/>
+</kw>
+<kw name="Element Should Contain Text" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView</arg>
+<arg>Iced Manuka Americano</arg>
+<doc>Verifies element identified by ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220610 19:52:58.895" level="INFO">Verifying element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[2]/android.widget.TextView' contains text 'Iced Manuka Americano'.</msg>
+<status status="PASS" starttime="20220610 19:52:58.891" endtime="20220610 19:52:58.986"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.Button</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:52:58.990" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.widget.Button'.</msg>
+<status status="PASS" starttime="20220610 19:52:58.986" endtime="20220610 19:52:59.087"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:55.612" endtime="20220610 19:52:59.088"/>
+</kw>
+<doc>Open application and allow permission apps</doc>
+<tag>ALAMI Technical Test</tag>
+<status status="PASS" starttime="20220610 19:52:40.483" endtime="20220610 19:52:59.088"/>
+</test>
+<test id="s1-t4" name="TC004 Scroll &amp; Order Stainlees Straw" line="48">
+<kw name="Scroll Add To Marchendise &quot;Stainlees Straw&quot;" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:52:59.090" endtime="20220610 19:53:00.697"/>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:53:00.904" level="INFO">Element 'coffee.fore2.fore:id/catalog_left_layout' size: {'height': 1542, 'width': 189} </msg>
+<msg timestamp="20220610 19:53:00.905" level="INFO">${element_size} = {'height': 1542, 'width': 189}</msg>
+<status status="PASS" starttime="20220610 19:53:00.697" endtime="20220610 19:53:00.905"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:53:01.123" level="INFO">Element 'coffee.fore2.fore:id/catalog_left_layout' location: {'x': 0, 'y': 252} </msg>
+<msg timestamp="20220610 19:53:01.124" level="INFO">${element_location} = {'x': 0, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:53:00.905" endtime="20220610 19:53:01.124"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:01.126" level="INFO">${start_x} = 94.5</msg>
+<status status="PASS" starttime="20220610 19:53:01.124" endtime="20220610 19:53:01.126"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:01.128" level="INFO">${start_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:53:01.126" endtime="20220610 19:53:01.128"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:01.129" level="INFO">${end_x} = 94.5</msg>
+<status status="PASS" starttime="20220610 19:53:01.128" endtime="20220610 19:53:01.129"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:01.130" level="INFO">${end_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:53:01.129" endtime="20220610 19:53:01.130"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:53:01.130" endtime="20220610 19:53:02.103"/>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:53:02.486" level="INFO">Element 'coffee.fore2.fore:id/catalog_left_layout' size: {'height': 1542, 'width': 189} </msg>
+<msg timestamp="20220610 19:53:02.487" level="INFO">${element_size} = {'height': 1542, 'width': 189}</msg>
+<status status="PASS" starttime="20220610 19:53:02.103" endtime="20220610 19:53:02.487"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:53:02.622" level="INFO">Element 'coffee.fore2.fore:id/catalog_left_layout' location: {'x': 0, 'y': 252} </msg>
+<msg timestamp="20220610 19:53:02.622" level="INFO">${element_location} = {'x': 0, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:53:02.487" endtime="20220610 19:53:02.622"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:02.624" level="INFO">${start_x} = 94.5</msg>
+<status status="PASS" starttime="20220610 19:53:02.622" endtime="20220610 19:53:02.624"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:02.625" level="INFO">${start_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:53:02.624" endtime="20220610 19:53:02.625"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:02.626" level="INFO">${end_x} = 94.5</msg>
+<status status="PASS" starttime="20220610 19:53:02.625" endtime="20220610 19:53:02.626"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:02.627" level="INFO">${end_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:53:02.626" endtime="20220610 19:53:02.627"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:53:02.627" endtime="20220610 19:53:03.551"/>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:53:04.045" level="INFO">Element 'coffee.fore2.fore:id/catalog_left_layout' size: {'height': 1542, 'width': 189} </msg>
+<msg timestamp="20220610 19:53:04.045" level="INFO">${element_size} = {'height': 1542, 'width': 189}</msg>
+<status status="PASS" starttime="20220610 19:53:03.552" endtime="20220610 19:53:04.045"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>coffee.fore2.fore:id/catalog_left_layout</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:53:04.229" level="INFO">Element 'coffee.fore2.fore:id/catalog_left_layout' location: {'x': 0, 'y': 252} </msg>
+<msg timestamp="20220610 19:53:04.229" level="INFO">${element_location} = {'x': 0, 'y': 252}</msg>
+<status status="PASS" starttime="20220610 19:53:04.045" endtime="20220610 19:53:04.229"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:04.232" level="INFO">${start_x} = 94.5</msg>
+<status status="PASS" starttime="20220610 19:53:04.230" endtime="20220610 19:53:04.232"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:04.234" level="INFO">${start_y} = 1331.3999999999999</msg>
+<status status="PASS" starttime="20220610 19:53:04.232" endtime="20220610 19:53:04.234"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:04.236" level="INFO">${end_x} = 94.5</msg>
+<status status="PASS" starttime="20220610 19:53:04.235" endtime="20220610 19:53:04.236"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:04.238" level="INFO">${end_y} = 714.5999999999999</msg>
+<status status="PASS" starttime="20220610 19:53:04.237" endtime="20220610 19:53:04.238"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:53:04.239" endtime="20220610 19:53:05.176"/>
+</kw>
+<status status="PASS" starttime="20220610 19:52:59.090" endtime="20220610 19:53:05.176"/>
+</kw>
+<kw name="Add To Marchendise &quot;Stainlees Straw&quot;" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.TextView</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:53:05.178" endtime="20220610 19:53:05.418"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:53:05.422" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[2]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[6]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220610 19:53:05.418" endtime="20220610 19:53:06.158"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:53:06.166" level="INFO">Clicking element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup[3]/android.widget.ScrollView/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220610 19:53:06.159" endtime="20220610 19:53:06.399"/>
+</kw>
+<kw name="Get Element Size" library="AppiumLibrary">
+<var>${element_size}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element size</doc>
+<msg timestamp="20220610 19:53:07.076" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' size: {'height': 844, 'width': 1080} </msg>
+<msg timestamp="20220610 19:53:07.076" level="INFO">${element_size} = {'height': 844, 'width': 1080}</msg>
+<status status="PASS" starttime="20220610 19:53:06.400" endtime="20220610 19:53:07.076"/>
+</kw>
+<kw name="Get Element Location" library="AppiumLibrary">
+<var>${element_location}</var>
+<arg>${scroll_path_addToCart}</arg>
+<doc>Get element location</doc>
+<msg timestamp="20220610 19:53:07.155" level="INFO">Element 'xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView' location: {'x': 0, 'y': 950} </msg>
+<msg timestamp="20220610 19:53:07.155" level="INFO">${element_location} = {'x': 0, 'y': 950}</msg>
+<status status="PASS" starttime="20220610 19:53:07.077" endtime="20220610 19:53:07.155"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:07.159" level="INFO">${start_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:53:07.156" endtime="20220610 19:53:07.159"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${start_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.7)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:07.160" level="INFO">${start_y} = 1540.8</msg>
+<status status="PASS" starttime="20220610 19:53:07.159" endtime="20220610 19:53:07.160"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_x}</var>
+<arg>${element_location['x']} + (${element_size['width']} * 0.5)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:07.162" level="INFO">${end_x} = 540.0</msg>
+<status status="PASS" starttime="20220610 19:53:07.160" endtime="20220610 19:53:07.162"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${end_y}</var>
+<arg>${element_location['y']} + (${element_size['height']} * 0.3)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220610 19:53:07.163" level="INFO">${end_y} = 1203.2</msg>
+<status status="PASS" starttime="20220610 19:53:07.162" endtime="20220610 19:53:07.163"/>
+</kw>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>${start_x}</arg>
+<arg>${start_y}</arg>
+<arg>${end_x}</arg>
+<arg>${end_y}</arg>
+<arg>300</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220610 19:53:07.163" endtime="20220610 19:53:08.154"/>
+</kw>
+<status status="PASS" starttime="20220610 19:53:05.177" endtime="20220610 19:53:08.154"/>
+</kw>
+<kw name="Click Add To Cart" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_add_to_cart</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:53:08.156" endtime="20220610 19:53:08.265"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/product_add_to_cart</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:53:08.269" level="INFO">Clicking element 'coffee.fore2.fore:id/product_add_to_cart'.</msg>
+<status status="PASS" starttime="20220610 19:53:08.265" endtime="20220610 19:53:08.352"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220610 19:53:11.355" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220610 19:53:08.353" endtime="20220610 19:53:11.355"/>
+</kw>
+<status status="PASS" starttime="20220610 19:53:08.155" endtime="20220610 19:53:11.356"/>
+</kw>
+<kw name="Order Now" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/cart_summary_layout</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:53:11.359" endtime="20220610 19:53:11.496"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/cart_summary_layout</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:53:11.502" level="INFO">Clicking element 'coffee.fore2.fore:id/cart_summary_layout'.</msg>
+<status status="PASS" starttime="20220610 19:53:11.497" endtime="20220610 19:53:11.721"/>
+</kw>
+<status status="PASS" starttime="20220610 19:53:11.357" endtime="20220610 19:53:11.721"/>
+</kw>
+<kw name="Input No Handphone &amp; Order" library="ClassApplicationFore">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/input_text_input</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220610 19:53:11.722" endtime="20220610 19:53:12.417"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/input_text_input</arg>
+<arg>812374</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220610 19:53:12.423" level="INFO">Typing text '812374' into text field 'coffee.fore2.fore:id/input_text_input'</msg>
+<status status="PASS" starttime="20220610 19:53:12.418" endtime="20220610 19:53:13.062"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>coffee.fore2.fore:id/input_text_icon</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220610 19:53:13.067" level="INFO">Clicking element 'coffee.fore2.fore:id/input_text_icon'.</msg>
+<status status="PASS" starttime="20220610 19:53:13.063" endtime="20220610 19:53:13.740"/>
+</kw>
+<status status="PASS" starttime="20220610 19:53:11.722" endtime="20220610 19:53:13.741"/>
+</kw>
+<doc>Open application and allow permission apps</doc>
+<tag>ALAMI Technical Test</tag>
+<status status="PASS" starttime="20220610 19:52:59.088" endtime="20220610 19:53:13.742"/>
+</test>
+<doc>ALAMI Technical Recruitment Process</doc>
+<status status="PASS" starttime="20220610 19:52:02.264" endtime="20220610 19:53:13.744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">ALAMI Technical Test</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="TestForeApplication">TestForeApplication</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
