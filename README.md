@@ -1,8 +1,6 @@
 # ALAMI-Technical Test {TestEngineer}
  ALAMI Techinical Test
 
-Test Engineer Flip Robotframework
-
 #Getting Started with Robot Framework Here are the prerequisites for running this acceptance testing framework.
 
     Python with PIP
