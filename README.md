@@ -1,4 +1,4 @@
-# ALAMI-Technical Test {TestEngineer}
+# ALAMI-Technical Test [TestEngineer]
  ALAMI Techinical Test
 
 #Getting Started with Robot Framework Here are the prerequisites for running this acceptance testing framework.
