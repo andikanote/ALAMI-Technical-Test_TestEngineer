@@ -36,7 +36,7 @@
     
 #File Directory For Run SuiteTest Flip
 
-    SuiteTest/TestEngineerFlip.robot
+    SuiteTest/TestForeApplication.robot
     
 #Directory Running Result
 
